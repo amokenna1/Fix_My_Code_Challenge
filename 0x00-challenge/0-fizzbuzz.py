@@ -1,27 +1,20 @@
-```python
 #!/usr/bin/python3
 """ FizzBuzz
 """
 import sys
 
-
 def fizzbuzz(n):
-    """
-    FizzBuzz function prints numbers from 1 to n separated by a space.
 
-    - For multiples of three print "Fizz" instead of the number and for
-      multiples of five print "Buzz".
-    - For numbers which are multiples of both three and five print "FizzBuzz".
-    """
     if n < 1:
         return
 
     result_list = []
     for idx in range(1, n + 1):
-        if (idx % 3) == 0 and (idx % 5) == 0:
-            result_list.append("FizzBuzz")
-        elif (idx % 3) == 0:
-            result_list.append("Fizz")
+        if (idx % 3) == 0:
+            if (idx % 5) == 0:
+                result_list.append("FizzBuzz")
+            else:
+                result_list.append("Fizz")
         elif (idx % 5) == 0:
             result_list.append("Buzz")
         else:
